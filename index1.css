@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    background: #d6e0e6;
+    scroll-behavior: smooth;
+}
+#stickyMenu.display {
+    display: block;
+}
+#stickyMenu {
+    background: transparent;
+    display: none;
+}
+.stickMenuList > li {
+    animation: animateBack 0.3s linear;
+    animation-delay: calc((0.065s * var(--i)));
+    transition: visibility ease-in-out 0.3s;
+    visibility: hidden;
+}
+.stickMenuList.active > li {
+    visibility: visible;
+    transform: translateY(0);
+    animation: animate 0.5s linear;
+    animation-delay: calc((-0.1s * var(--i)));
+}
+.stickMenuList > li > div:nth-child(2) {
+    background: #c7e3f3;
+}
+@keyframes animate {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes animateBack {
+    0% {
+        transform: scale(1);
+        visibility: visible;
+    }
+    100% {
+        transform: scale(0);
+        visibility: hidden;
+    }
+}
+.overlay {
+    position: fixed;
+    transition: all 0.25s ease-in-out;
+    top: 0;
+    /* display: none; */
+    left: 110vw;
+    height: 100vh;
+    width: 100%;
+    z-index: 49;
+    opacity: 0;
+    background: rgba(135, 140, 143, 0.178);
+    backdrop-filter: blur(0px);
+}
+.overlay.active{
+    opacity: 1;
+    left: 0;
+    /* display: block; */
+    backdrop-filter: blur(3px);
+}
+#menuToggle {
+    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
+}
+#popup {
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(2px);
+}
+#popup #popupBox {
+    transition: 0.3s;
+    transition-delay: 0.01s;
+}
+#popup.active #popupBox{
+    transition-delay: 0.2s;
+    transform: scale(1);
+}
+#popup.active {
+    visibility: visible;
+    opacity: 1;
+}
+#popup.deactive {
+    opacity: 0;
+    transition-delay: 0.2s;
+}
+#popup.deactive #popupBox{
+    transform: scale(0);
+}
+.topicsSec {
+    background: linear-gradient(to bottom, transparent, rgb(191, 203, 218), transparent);
+}
+.heroMenu {
+    animation: listMenu 1s linear infinite;
+    animation-delay: calc(0.2s * var(--a));
+}
+@keyframes listMenu {
+    0%, 100% {
+        transform: translateY(-25%);
+        -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+                animation-timing-function: cubic-bezier(0.8,0,1,1);
+      }
+    
+      50% {
+        transform: none;
+        -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+                animation-timing-function: cubic-bezier(0,0,0.2,1);
+      }
+}
+button[type='submit'] {
+    position: relative;
+    transition: all 0.2s linear;
+    box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+button[type='submit']:hover {
+    box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.4);
+}
+button[type='submit'] h2 {
+    z-index: 3;
+}
+button[type='submit'] > div {
+    z-index: -1;
+}
+button[type='submit'] > div::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    border-radius: inherit;
+    background: linear-gradient(to right, transparent, rgb(124, 58, 237));
+    transition: all 0.2s linear;
+}
+button[type='submit']:hover > div::after {
+    right: 0;
+}

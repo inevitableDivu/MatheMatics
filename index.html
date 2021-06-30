@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAO MATHS PADHE</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index1.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="./swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
+
+    <style>
+        .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: fit-content;
+        height: fit-content;
+        padding: 20px;
+        transition-duration: 400ms;
+        filter: blur(4px);
+        background: transparent;
+      }
+      .swiper-container-3d .swiper-slide-shadow-left,
+      .swiper-container-3d .swiper-slide-shadow-right {
+        background-image: none;
+      }
+      .swiper-slide-active {
+          filter: blur(0px);
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+
+    <!-- font awesome css -->
+      <script src="https://kit.fontawesome.com/d3d04a21d6.js" crossorigin="anonymous"></script>
+</head>
+<body class="dark:bg-gray-800">
+    <header>
+        <nav class="bg-blue-600 shadow-lg">
+            <div class="navbar w-full p-3 px-4 flex items-center justify-between">
+                <div id="welcome" class="logo">
+                    <h2 class="text-3xl font-bold font-mate text-white tracking-wider pointer-events-none">Study Materials</h2>
+                </div>
+                <div class="navMenu">
+                    <div class="menuBox fixed bottom-7 right-6 flex flex-col-reverse items-center justify-center z-50">
+                        <div id="menuToggle" class="relative h-14 w-14 flex-col flex items-center justify-center bg-blue-300 rounded-full shadow-lg p-2 z-50 cursor-pointer">
+                            <div id="menuBar" class="absolute top-0 left-0 h-full w-full rounded-full flex items-center justify-center">
+                                <i class="fa fa-bars fa-2x text-blue-600" aria-hidden="true"></i>
+                            </div>
+                            <div id="menuTimes" class="absolute top-0 left-0 h-full w-full rounded-full items-center justify-center" style="display: none;">
+                                <i class="fas fa-times fa-2x text-blue-600"></i>
+                            </div>
+                        </div>
+                        <div id="stickyMenu" class="stickMenuList list-none">
+                            <li class="mb-4 relative cursor-pointer" style="--i:1" onclick="window.scrollTo(0, 0)">
+                                <div class="absolute rounded-sm right-14 top-2 bg-white text-opacity-60 text-black text-sm font-bold tracking-wider px-3 py-1 uppercase w-max"><span class="pointer-events-none">home</span></div>
+                                <div class="h-11 w-11 rounded-full shadow-lg p-1 z-50 flex items-center justify-center">
+                                    <i class="fa fa-home fa-lg text-red-500" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                            <li class="mb-4 relative cursor-pointer" style="--i:2">
+                                <div class="absolute rounded-sm right-14 top-2 bg-white text-opacity-60 text-black text-sm font-bold tracking-wider px-3 py-1 uppercase w-max"><span class="pointer-events-none">courses</span></div>
+                                <div class="h-11 w-11 rounded-full shadow-lg p-1 z-50 flex items-center justify-center">
+                                    <i class="fa fa-book fa-lg text-green-500" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                            <li class="mb-4 relative cursor-pointer" style="--i:3">
+                                <div class="absolute rounded-sm right-14 top-2 bg-white text-opacity-60 text-black text-sm font-bold tracking-wider px-3 py-1 uppercase w-max"><span class="pointer-events-none">ask queries</span></div>
+                                <div class="h-11 w-11 rounded-full shadow-lg p-1 z-50 flex items-center justify-center">
+                                    <i class="fa fa-comments fa-lg text-indigo-500" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                            <li class="mb-4 relative cursor-pointer" style="--i:4">
+                                <div class="absolute rounded-sm right-14 top-2 bg-white text-opacity-60 text-black text-sm font-bold tracking-wider px-3 py-1 uppercase w-max"><span class="pointer-events-none">join us</span></div>
+                                <div class="h-11 w-11 rounded-full shadow-lg p-1 z-50 flex items-center justify-center">
+                                    <i class="fa fa-users fa-lg text-yellow-500" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main class="bg-blue-100 relative overflow-hidden flex flex-col-reverse md:grid md:grid-cols-5 lg:grid-cols-2">
+        <div class="md:col-span-3 lg:col-span-1 lg:ml-14 relative flex items-center justify-center flex-col">
+            <i class="fa fa-calculator absolute fa-7x opacity-20 top-5 -left-5  transform rotate-45 md:-left-12 text-yellow-400 z-0" aria-hidden="true"></i>
+            <i class="fa fa-times absolute fa-5x opacity-30 right-8 top-10 md:right-1/4 text-green-400 z-0" aria-hidden="true"></i>
+            <i class="fas fa-infinity absolute fa-10x opacity-20 transform rotate-12 -bottom-12 left-1/4 md:left-1/3 text-red-400 z-0"></i>
+            <div class="pt-12 px-4 md:pb-6 z-10">
+                <h2 class="text-gray-800 text-center font-bold text-4xl font-ssans tracking-wider md:text-5xl z-1 pointer-events-none">Mathematics</h2>
+                <p class="text-gray-600 text-center font-bold mt-3 text-xl font-sans tracking-wider z-1 uppercase pointer-events-none">The magic World</p>
+            </div>
+            <div class="md:flex md:justify-start mt-5 lg:w-full lg:justify-center lg:ml-0">
+                <div class="m-4 rounded-lg border-2 border-black bg-gray-900 mx-auto md:mx-4" style="width: fit-content;">
+                    <button class="text-md rounded-lg flex items-center justify-center flex-row px-4 py-1 mx-auto outline-none">
+                        <i class="fab fa-apple text-white" style="font-size: 30px;"></i>
+                        <span class="p-1 ml-2 font-ssans uppercase font-semibold text-white">Download</span>
+                    </button>
+                </div>
+                <div class="m-4 rounded-lg border-2 border-black mx-auto md:mx-4" style="width: fit-content;">
+                    <button class="text-md rounded-lg flex items-center justify-center flex-row px-4 py-1 outline-none">
+                        <i class="fab fa-google-play" style="font-size: 26px;"></i>
+                        <span class="p-1 ml-2 font-ssans uppercase font-semibold">Download</span>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full my-10 py-2 flex justify-center">
+                <ul class="list-none flex w-full sm:w-3/4 lg:w-full sm:justify-evenly justify-center z-10">
+                    <li class="heroMenu border-b-2 border-blue-600 sm:ml-0 cursor-pointer" style="--a:1"><button class="outline-none text-sm md:text-base uppercase font-bold tracking-wide text-blue-600 md:font-semibold transition-all scale-100 hover:scale-150 hover:text-blue-700" onclick="popupMenu('formula')">Formula</button></li>
+                    <li class="heroMenu border-b-2 border-blue-600 ml-4 sm:ml-0 cursor-pointer" style="--a:2"><button class="outline-none text-sm md:text-base uppercase font-bold tracking-wide text-blue-600 md:font-semibold transition-all scale-100 hover:scale-150 hover:text-blue-700" onclick="popupMenu('samplePaper')">Sample Papers</button></li>
+                    <li class="heroMenu border-b-2 border-blue-600 ml-4 sm:ml-0 cursor-pointer" style="--a:3"><button class="outline-none text-sm md:text-base uppercase font-bold tracking-wide text-blue-600 md:font-semibold transition-all scale-100 hover:scale-150 hover:text-blue-700" onclick="popupMenu('solutions')">Solution</button></li>
+                </ul>
+                <div id="popup" class="fixed top-0 left-0 h-full w-full bg-gray-500 z-30 transition-all duration-200 bg-opacity-50 flex items-center justify-center" style="min-height: 500px;">
+                    <div id="closePopup" class="w-6 h-8 cursor-pointer">
+                        <i class="fas fa-times fa-2x fixed top-6 right-6 opacity-60"></i>
+                    </div>
+                    <div id="popupBox" class="relative w-2/3 sm:w-1/2 lg:w-1/3 bg-white rounded-md p-5">
+                        <ul id="popupList" class="flex items-center justify-center flex-col">
+                            <script>
+                                function embedList(list) {
+                                    for(let i = 0; i < list.length; i++){
+                                        var pdfs = document.createElement('div');
+                                        pdfs.className = "listingMenu w-full"
+                                        pdfs.id = "listingItem" + i
+                                        document.getElementById('popupList').appendChild(pdfs);
+                                        var num = i.toString();
+                                        var id = "listingItem" + num;
+                                        document.getElementById(id).innerHTML = `<li class="w-full rounded-xl py-3 text-center uppercase text-base font-ssans tracking-wider font-semibold hover:scale-x-150 cursor-pointer transition-all duration-300 text-blue-600 hover:text-white hover:bg-blue-600" onclick='location.href = "${list[i].href}"'>${list[i].name}</li>`
+                                    }
+                                }
+                            </script>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:col-span-2 lg:col-span-1 lg:w-full lg:h-full flex justify-center items-center p-5">
+            <div class="h-52 md:h-full lg:h-96 w-52 md:w-full lg:w-96">
+                <svg id="f1248760-b706-401a-9a88-490bc0db237b" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" class="h-full w-full" viewBox="0 0 654.23657 682.11354"><title>mathematics</title><path d="M892.88171,744.55677c0,25.68-138.79,46.5-310,46.5s-310-20.82-310-46.5c0-18.18,69.57-33.93,170.96-41.57,41.81-3.16,89.05-4.93,139.04-4.93,20.55,0,40.63.3,60.05.87C785.40173,703.12678,892.88171,721.95673,892.88171,744.55677Z" transform="translate(-272.88171 -108.94323)" fill="#3f3d56"/><ellipse cx="270" cy="630.61354" rx="119" ry="14.5" opacity="0.1"/><ellipse cx="269.5" cy="521.11354" rx="112.5" ry="120" fill="#3f3d56"/><rect x="235" y="592.11354" width="70" height="64" fill="#2563eb"/><polygon points="396.5 607.614 392.5 629.614 418.5 633.614 435.5 623.614 434.5 607.614 396.5 607.614" fill="#575a89"/><path d="M538.38171,303.55677s-2,23-7,24,11,41,11,41h24l19-5-9-22s-12-16-3-29S538.38171,303.55677,538.38171,303.55677Z" transform="translate(-272.88171 -108.94323)" fill="#a0616a"/><path d="M538.38171,303.55677s-2,23-7,24,11,41,11,41h24l19-5-9-22s-12-16-3-29S538.38171,303.55677,538.38171,303.55677Z" transform="translate(-272.88171 -108.94323)" opacity="0.1"/><path d="M488.38171,479.55677s-26,50-5,60,26,9,26,12-4,2-2,7-4,25,2,37,4,21,4,21,0,1,2,5,3,7,2,9-7,15-1,18,37,5,40,0-3-8,0-11,5-4,3-6-4-27-4-27,5-29,3-33-5-8-3-11,4-2,5-6,3-13,3-13l11-1,26,5s29,32,61,42c0,0,9,9,12,9s3,0,2,2-4,2-2,4,5-1,3,2-4,3-2,5-1,13-1,14-9,95-6,97,45,8,48,0-2-18-2-18,15-120,11-128-18-44-93-67c0,0-21-4-21-7s-2-22-6-23-27-2-27-2l-29,9-40-7Z" transform="translate(-272.88171 -108.94323)" fill="#2f2e41"/><path d="M523.38171,647.55677l-5,18s-4,29,1,36c3.92739,5.49834,10.93965,12.23063,23.94449,13.4122a16.07115,16.07115,0,0,0,16.77855-11.11774,5.00653,5.00653,0,0,0,.277-1.29446c0-2-3-26-3-26l-5-25-1-7Z" transform="translate(-272.88171 -108.94323)" fill="#2f2e41"/><path d="M669.38171,733.55677s-5-5-6,0-5,26,2,27,74,11,81,7,20-10,12-13-31-12-31-12-13-17-15-18-13,1-18,5S669.38171,733.55677,669.38171,733.55677Z" transform="translate(-272.88171 -108.94323)" fill="#2f2e41"/><circle cx="289.5" cy="184.61354" r="31" fill="#a0616a"/><path d="M559.38171,363.55677l-12-13-13.30147-26s-9.69853-3-11.69853,2-38,21-38,21,9,84,5,92-11,40-5,43,34,0,43,4,35,4,42-1,9-9,16-6c5.95926,2.554,19.89075-84.761,23.90164-110.781a11.844,11.844,0,0,0-4.90807-11.50971c-8.97276-6.29384-25.13277-17.13965-27.99357-15.70925C572.38171,343.55677,559.38171,363.55677,559.38171,363.55677Z" transform="translate(-272.88171 -108.94323)" fill="#575a89"/><path d="M602.38171,359.55677h0a11.85952,11.85952,0,0,1,8.91063,10.19577l8.08936,72.80423s-20,43-30,14S602.38171,359.55677,602.38171,359.55677Z" transform="translate(-272.88171 -108.94323)" fill="#575a89"/><path d="M600.38171,449.55677l22-6s4,28,8,28-14,16-23,14-22-9-23-14,9-26,9-26Z" transform="translate(-272.88171 -108.94323)" fill="#575a89"/><path d="M538.98,306.92974c2.10792-4.648,1.74193-10.06966,3.48463-14.86653a17.72716,17.72716,0,0,1,26.95315-8.38071c2.24178,1.59841,4.48928,3.84417,7.22559,3.539,2.94671-.32859,5.575-3.61593,8.2842-2.41116,3.00277,1.33533,2.19174,6.71676,5.23391,7.95972,1.6013.65426,3.49355-.35311,4.41715-1.8157a11.2246,11.2246,0,0,0,1.28583-4.97622c.41976-4.26508.79909-8.779-1.05062-12.64493a30.28893,30.28893,0,0,1-2.02829-4.08992,13.99385,13.99385,0,0,1-.38561-4.03439c-.01689-5.01309-.38281-10.24215-2.90568-14.57417-2.79955-4.80711-7.97447-7.881-13.37326-9.22227s-11.055-1.13561-16.59807-.66635c-9.16324.77574-18.71927,2.43858-25.93856,8.135a10.14728,10.14728,0,0,0-2.49336,2.61953,13.525,13.525,0,0,0-1.32811,3.84148,79.44958,79.44958,0,0,1-6.96764,18.27716,39.65627,39.65627,0,0,0-3.59543,7.76544c-.76559,2.75442-.71387,5.89343.8887,8.26085,1.30475,1.92745,3.39065,2.95463,5.02945,4.53044,1.62387,1.56146,2.38368,4.56438,4.18252,5.74673,1.57033,1.03215,3.4513.30356,5.0529,1.39752C536.40966,302.72479,536.55818,305.80443,538.98,306.92974Z" transform="translate(-272.88171 -108.94323)" fill="#2f2e41"/><path d="M564.38171,378.55677l3-6s44,13,53,25c0,0,22-14,34-12l12,2-37,33-47-4Z" transform="translate(-272.88171 -108.94323)" fill="#f2f2f2"/><path d="M562.38171,372.55677l-41,57,59,29s5.51572,3,9.75786,0l39.24214-18,37-53-37,19s-4-8-12-4Z" transform="translate(-272.88171 -108.94323)" fill="#2563eb"/><path d="M625.38171,473.55677l8-21s18-23,8-34-21,32-21,32Z" transform="translate(-272.88171 -108.94323)" fill="#a0616a"/><path d="M533.07939,470.20556l17.45624-14.152s27.11-10.865,23.97851-25.39746-34.22053,17.14513-34.22053,17.14513Z" transform="translate(-272.88171 -108.94323)" fill="#a0616a"/><path d="M489.88171,369.05677h-1s-15.5-18.5-18.5,6.5-13,108,13,111,44.5-12.5,44.5-12.5,19-29,12-29c-3.38691,0-12.59835-1.52116-21-1-8.96272.556-17.01615,3.08078-16.5.5C503.38171,439.55677,517.88171,376.05677,489.88171,369.05677Z" transform="translate(-272.88171 -108.94323)" opacity="0.1"/><path d="M488.38171,349.55677l-4-2s-16,3-19,28-13,108,13,111,61-4,61-4,7-38,0-38-43,5-42,0S516.38171,356.55677,488.38171,349.55677Z" transform="translate(-272.88171 -108.94323)" fill="#575a89"/><polygon points="338 353.114 349.027 336.213 356 364.114 338 372.114 338 353.114" fill="#575a89"/><circle cx="111.47314" cy="85.11354" r="27" fill="#f2f2f2"/><rect x="79.47314" y="286.11354" width="64" height="64" fill="#f2f2f2"/><polygon points="372 0 388.199 28.057 404.397 56.114 372 56.114 339.603 56.114 355.801 28.057 372 0" fill="#f2f2f2"/><path d="M927.11829,277.17226q-.58078,17.95539-8.74513,28.78352-8.16571,10.82931-19.40145,10.83029-9.15176,0-16.04242-10.59861-6.89283-10.5984-6.892-32.60592,0-4.8648.23169-9.26642.23089-4.40064.57921-8.33968l4.05409-38.108H854.14538Q847.196,290.14515,842.73627,303.871q-4.46013,13.72556-15.11568,13.726a12.78019,12.78019,0,0,1-8.57155-3.59073,12.06434,12.06434,0,0,1-4.0541-9.4983q0-5.326,8.3976-14.884,8.39721-9.55611,9.32434-17.43233l6.94976-54.32423H828.43149a19.9108,19.9108,0,0,0-9.09265,2.25854,17.15586,17.15586,0,0,0-6.54451,5.27024l-4.98084,7.41313H803.7594q5.67412-17.6052,13.95764-26.46706,8.28-8.86106,19.05393-8.861H925.2652v20.38611H895.381q-1.39011,13.89963-2.14289,27.799-.75455,13.89963-.75278,27.9151,0,9.499,4.40162,15.40548,4.40064,5.90738,11.00386,5.90718,4.05312,0,8.51344-3.30132a11.97,11.97,0,0,0,5.03856-8.62908q.34754-2.54667.52109-3.99618.17377-1.44695.174-1.79536Z" transform="translate(-272.88171 -108.94323)" fill="#2563eb"/><path d="M927.11829,277.17226q-.58078,17.95539-8.74513,28.78352-8.16571,10.82931-19.40145,10.83029-9.15176,0-16.04242-10.59861-6.89283-10.5984-6.892-32.60592,0-4.8648.23169-9.26642.23089-4.40064.57921-8.33968l4.05409-38.108H854.14538Q847.196,290.14515,842.73627,303.871q-4.46013,13.72556-15.11568,13.726a12.78019,12.78019,0,0,1-8.57155-3.59073,12.06434,12.06434,0,0,1-4.0541-9.4983q0-5.326,8.3976-14.884,8.39721-9.55611,9.32434-17.43233l6.94976-54.32423H828.43149a19.9108,19.9108,0,0,0-9.09265,2.25854,17.15586,17.15586,0,0,0-6.54451,5.27024l-4.98084,7.41313H803.7594q5.67412-17.6052,13.95764-26.46706,8.28-8.86106,19.05393-8.861H925.2652v20.38611H895.381q-1.39011,13.89963-2.14289,27.799-.75455,13.89963-.75278,27.9151,0,9.499,4.40162,15.40548,4.40064,5.90738,11.00386,5.90718,4.05312,0,8.51344-3.30132a11.97,11.97,0,0,0,5.03856-8.62908q.34754-2.54667.52109-3.99618.17377-1.44695.174-1.79536Z" transform="translate(-272.88171 -108.94323)" opacity="0.1"/><path d="M927.11829,273.55326q-.58078,17.95539-8.74513,28.78352-8.16571,10.82931-19.40145,10.83029-9.15176,0-16.04242-10.5986-6.89283-10.59841-6.892-32.60593,0-4.8648.23169-9.26642.23089-4.40064.57921-8.33967l4.05409-38.10806H854.14538Q847.196,286.52615,842.73627,300.252q-4.46013,13.72557-15.11568,13.726a12.78019,12.78019,0,0,1-8.57155-3.59073,12.06432,12.06432,0,0,1-4.0541-9.49829q0-5.326,8.3976-14.884,8.39721-9.55612,9.32434-17.43233l6.94976-54.32424H828.43149a19.9108,19.9108,0,0,0-9.09265,2.25854,17.15586,17.15586,0,0,0-6.54451,5.27024l-4.98084,7.41314H803.7594q5.67412-17.60522,13.95764-26.46706,8.28-8.86107,19.05393-8.861H925.2652v20.38611H895.381q-1.39011,13.89963-2.14289,27.79906-.75455,13.89962-.75278,27.91509,0,9.499,4.40162,15.40548,4.40064,5.90738,11.00386,5.90718,4.05312,0,8.51344-3.30132a11.97,11.97,0,0,0,5.03856-8.62908q.34754-2.54667.52109-3.99617.17377-1.447.174-1.79537Z" transform="translate(-272.88171 -108.94323)" fill="#2563eb"/></svg>
+            </div>
+        </div>
+    </main>
+
+    <section class="mt-12 py-7 px-3" style="background: linear-gradient(45deg, rgb(10, 13, 20), rgb(43, 57, 87));">
+        <div class="p-1">
+            <div class="mb-7">
+                <h2 class="uppercase text-white font-ssans font-bold text-2xl text-center">
+                    <span class="mx-1.5 underline">c.b.s.e.</span>
+                    <span class="mx-1.5 underline">b.s.e.b.</span>
+                    <span class="mx-1.5 underline">i.c.s.e.</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-7 max-w-5xl mx-auto">
+                <div class="flex items-center justify-center w-full my-3"><button class="bg-blue-600 px-4 rounded-md py-3 text-sm uppercase font-bold text-white tracking-wider outline-none" onclick="location.href = './class-07.html'">Class - 7 <i class="fas fa-chevron-right ml-1 -mr-1"></i></button></div>
+                <div class="flex items-center justify-center w-full my-3"><button class="bg-blue-600 px-4 rounded-md py-3 text-sm uppercase font-bold text-white tracking-wider outline-none" onclick="location.href = './class-08.html'">Class - 8 <i class="fas fa-chevron-right ml-1 -mr-1"></i></button></div>
+                <div class="flex items-center justify-center w-full my-3"><button class="bg-blue-600 px-4 rounded-md py-3 text-sm uppercase font-bold text-white tracking-wider outline-none" onclick="location.href = './class-09.html'">Class - 9 <i class="fas fa-chevron-right ml-1 -mr-1"></i></button></div>
+                <div class="flex items-center justify-center w-full my-3"><button class="bg-blue-600 px-4 rounded-md py-3 text-sm uppercase font-bold text-white tracking-wider outline-none" onclick="location.href = './class-10.html'">Class - 10 <i class="fas fa-chevron-right ml-1 -mr-1"></i></button></div>
+                <div class="flex items-center justify-center w-full my-3"><button class="bg-blue-600 px-4 rounded-md py-3 text-sm uppercase font-bold text-white tracking-wider outline-none" onclick="location.href = './class-11.html'">Class - 11 <i class="fas fa-chevron-right ml-1 -mr-1"></i></button></div>
+                <div class="flex items-center justify-center w-full my-3"><button class="bg-blue-600 px-4 rounded-md py-3 text-sm uppercase font-bold text-white tracking-wider outline-none" onclick="location.href = './class-12.html'">Class - 12 <i class="fas fa-chevron-right ml-1 -mr-1"></i></button></div>
+            </div>
+            <div class="my-4 mt-7">
+                <h2 class="uppercase text-blue-500 text-base text-center font-bold tracking-wider font-sans">GOVERNMENT JOB ASPIRANTS</h2>
+                <div class="-mx-1 mt-6 flex justify-center">
+                    <button class="uppercase outline-none text-white text-xs font-semibold tracking-wider border-2 border-blue-600 mx-2 md:mx-10 rounded-md px-4 py-2 my-3">ssc cgl</button>
+                    <button class="uppercase outline-none text-white text-xs font-semibold tracking-wider border-2 border-blue-600 mx-2 md:mx-10 rounded-md px-4 py-2 my-3">ssc chsl</button>
+                    <button class="uppercase outline-none text-white text-xs font-semibold tracking-wider border-2 border-blue-600 mx-2 md:mx-10 rounded-md px-4 py-2 my-3">banking</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-8 py-7 px-5 md:grid md:grid-cols-2 lg:grid-cols-5">
+        <div class="md:col-span-1 lg:col-span-3 p-1 my-4 md:px-5 lg:px-20 items-center md:text-center font-semibold font-ssans tracking-wider flex flex-col justify-center sm:px-6 leading-6">
+            <h2 class="uppercase font-mate text-2xl font-bold text-center mb-5">What is mathematics?</h2>
+            <div class="h-60 w-full md:hidden my-8 p-6">
+                <img src="./image/road.svg" alt="" class="h-full w-full">
+            </div>
+            I saw many students have dread of studying Maths. If you study maths, it'll become fun for you all the students. Mathematics includes the study of a different-different topics such as- <i class="font-bold text-gray-900">Numbers, Geometry, Calculus, Algebra, Statistics, Probability, Trigonometry, and so on.</i> Mathematicians seek and use patterns to formulate new conjectures; they resolve the truth or falsity of such by Mathematical proofs. Students dont forget if we try then, <code class="block leading-loose font-bold tracking-widest text-xl text-blue-600 text-center" style="font-family: Satisfy;">"<u>Anything is possible in our life</u>"</code>
+        </div>
+        <div class="md:col-span-1 lg:col-span-2 h-full w-full md:p-8 lg:p-14 hidden md:block">
+            <img src="./image/road.svg" alt="" class="h-full w-full">
+        </div>
+        <div class="md:col-span-1 lg:col-span-2 h-full w-full md:p-8 lg:p-14 hidden md:block">
+            <img src="./image/exams.svg" alt="" class="h-full w-full">
+        </div>
+        <hr class="w-3/4 h-1 bg-black my-16 mx-auto opacity-50 md:hidden" style="border-radius: 50%;">
+        <div class="md:col-span-1 lg:col-span-3 p-1 my-4 md:px-5 lg:px-20 items-center md:text-center font-semibold font-ssans tracking-wider flex flex-col justify-center sm:px-6 leading-6">
+            <h2 class="uppercase font-mate text-2xl font-bold text-center mb-5 mt3">IMPORTANCE OF MATHS</h2>
+            <div class="h-60 w-full md:hidden my-8 p-6">
+                <img src="./image/exams.svg" alt="" class="h-full w-full">
+            </div>
+            From a mobile phone to the computers, whether used in Hospitals, Banks, Shop or Designer's studios, Malls and many other places, we see the influence of Maths. Proper Knowledge in maths will help you deal with all transactions.In the field of medicine, accurate measurements are a matter of life or death. Even in our home kitchen's we use maths. Isn't it amazing? The correct measurements of ingredients make the food tasty. Otherwise food taste like poison.
+            Today Artificial Intelligence is making a big contribution in all the fields. No engineers can make this possible without the knowledge of mathematics.
+        </div>
+    </section>
+
+    <section class="topicSec max-w-4xl mx-auto">
+        <div class="swiper-container mySwiper">
+            <div id="swiperWrapper" class="swiper-wrapper">
+                <script>
+                    const swiperItem = [{name: 'algebra', img: './alge.jpg'}, {name: 'geometry', img: './geom.jpg'}, {name: 'Statistics', img: './stat.jpg'}, {name: 'co-ordinate geometry', img: './COOR.jpg'}, {name: 'differentiation', img: './diff.jpg'}, {name: 'number system', img: './numb.jpg'}, {name: 'calculus', img: './CALC.jpg'}, {name: 'trigonometry', img: './TRIG.jpg'}, {name: 'probability', img: './prob.jpg'}]
+            
+                    for (let i = 0; i < swiperItem.length; i++) {
+                        var swiper = document.createElement('div');
+                        swiper.className = "swiper-slide md:mx-16";
+                        swiper.id = "swiperSlide" + i
+                        document.getElementById('swiperWrapper').appendChild(swiper);
+                        var num = i.toString();
+                        var id = "swiperSlide" + num;
+                        document.getElementById(id).innerHTML = `<div class="max-w-max flex justify-center flex-col items-center">
+                                                                    <div class="h-44 w-44 p-1 rounded-full bg-gradient-to-bl from-purple-700 to-blue-600">
+                                                                        <div class="h-full w-full rounded-full p-1 bg-blue-100">
+                                                                            <img src=${swiperItem[i].img} alt="" class="h-full w-full rounded-full">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="py-3 font-bold text-lg font-ssans tracking-wider uppercase">
+                                                                        ${swiperItem[i].name}
+                                                                    </div>
+                                                                </div>`
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <section class="contantMe mt-3 p-3">
+        <div class="">
+            <h2 class="uppercase text-3xl font-bold font-mate text-gray-900 tracking-wider text-center">
+                contact me
+            </h2>
+            <div class="py-7 px-3">
+                <form action="" class="max-w-md md:max-w-xl mx-auto">
+                    <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
+                            <input type="name" required class="w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-base font-bold font-ssans tracking-wide leading-5 text-gray-800" placeholder="Name" />
+                            <input type="email" required class="w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-base font-bold font-ssans tracking-wide leading-5 text-gray-800" placeholder="Email" />
+                    </div>
+                    <div class="mt-6">
+                        <textarea name="message" id="userMessage" rows="4" class="w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-base font-semibold font-ssans tracking-wide leading-5 text-gray-800" placeholder="Your Message Here"></textarea>
+                    </div>
+                    <div class="mt-6 mx-auto">
+                        <button type="submit" class="w-full rounded-md px-4 py-2 text-white text-base uppercase tracking-widest font-bold">
+                            <h2>Submit</h2>
+                            <div class="absolute top-0 left-0 w-full h-full bg-blue-500 rounded-md"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-8 p-4 bg-gray-800 relative bottom-0 w-full h-20 overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-full p-2 text-center text-sm text-gray-300 mb-1">
+            Copyright © All rights reserverd <span><a class="block uppercase underline font-bold text-sm cursor-pointer" onclick="window.scrollTo(0, 0)">aao maths padhe</a></span>
+        </div>
+    </footer>
+
+
+
+      <!-- swiper js -->
+      <script src="https://unpkg.com/swiperjs/swiper-bundle.min.js"></script>
+  
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+            rotate: 10,
+            stretch: 0,
+            depth: 75,
+            modifier: 2,
+            slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            },
+        });
+      </script>
+
+    <script>
+        const closeMenu = document.getElementById('overlay')
+        const menu = document.getElementById('menuBar')
+        const close1 = document.getElementById('menuTimes')
+        menu.addEventListener('click', function() {
+            menu.style.display = 'none'
+            close1.style.display = 'flex'
+            document.getElementById('overlay').classList.toggle('active');
+            document.getElementById('stickyMenu').classList.toggle('active');
+            document.querySelector('#stickyMenu').classList.add('display');
+        })
+        close1.addEventListener('click', function() {
+            menu.style.display = 'flex'
+            close1.style.display = 'none'
+            document.getElementById('overlay').classList.toggle('active');
+            document.getElementById('stickyMenu').classList.toggle('active');
+            setTimeout(() => {
+                document.querySelector('#stickyMenu').classList.remove('display');
+            }, 450)
+        })
+        // closeMenu.addEventListener('click', function() {
+        //     document.getElementById('overlay').classList.toggle('active');
+        //     document.getElementById('stickyMenu').classList.toggle('active');
+        //     menu.style.display = 'flex'
+        //     close1.style.display = 'none'
+        //     setTimeout(() => {
+        //         document.querySelector('#stickyMenu').classList.remove('display');
+        //     }, 400)
+        // })
+
+        var list = [];
+        function popupMenu(data) {
+            document.getElementById('popupList').innerHTML = '';
+            setTimeout(() => {
+                document.getElementById('popup').classList.remove('deactive');
+                document.getElementById('popup').classList.add('active');
+                document.getElementById('closePopup').addEventListener('click', function () {
+                    document.getElementById('popup').classList.remove('active');
+                    document.getElementById('popup').classList.add('deactive');
+                })
+                if (data === 'formula') {
+                    window.location.href = '#formula'
+                    list = [{name: 'class - 12', href: '11-12formula.html'}, {name: 'class - 11', href: '11-12formula.html'}, {name: 'class - 10', href: '#'}, {name: 'class - 9', href: '#'}, {name: 'probability', href: '#'}, {name: 'statistics', href: '#'}];
+                    embedList(list)
+                } else if (data === 'samplePaper') {
+                    window.location.href = '#sample-papers'
+                    list = [{name: 'class - 9', href: '#'}, {name: 'class - 10', href: '#'}, {name: 'class - 11', href: '#'}, {name: 'class - 12', href: '#'}, {name: 'ssc cgl', href: '#'}, {name: 'ssc chsl', href: '#'}];
+                    embedList(list)
+                } else if (data === 'solutions') {
+                    window.location.href = '#solutions'
+                    list = [{name: 'ncert', href: '#'}, {name: 'rd sharma', href: '#'}, {name: 'rs agarwal', href: '#'}, {name: 'jee mains', href: '#'}, {name: 'jee advanced', href: '#'}, {name: 'ssc cgl', href: '#'}];
+                    embedList(list)
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
